@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/Abilities/Ability.tscn" type="PackedScene" id=1]
+
+[node name="IncreaseAttackDamage" instance=ExtResource( 1 )]
+row = 2
+column = 3
+
+[node name="Attributes" parent="." index="0"]
+attack_damage = 10.0

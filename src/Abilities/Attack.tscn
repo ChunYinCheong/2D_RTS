@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://src/Abilities/Ability.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/Abilities/Attack.gd" type="Script" id=2]
+[ext_resource path="res://assets/ability/texture/attack.png" type="Texture" id=3]
+
+[node name="Attack" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+ability_name = "Attack"
+row = 1
+texture = ExtResource( 3 )
+action = "attack"
+need_target = true
