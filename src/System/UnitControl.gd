@@ -1,6 +1,6 @@
 extends PanelContainer
 
-const Unit = preload("res://src/Units/Unit.gd")
+const Unit = preload("res://src/Unit.gd")
 
 var selected_unit : Unit
 var selected_command
@@ -26,12 +26,6 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	var selected = $"../../SelectionSystem".selected
-	if selected:
-		selected_unit = selected.get_parent()
-	else:
-		selected_unit = null
-	
 	hp_label.text = ""
 	unit_name_label.text = ""
 	attack_damage_label.text = ""
@@ -42,13 +36,15 @@ func _process(delta):
 	for ac in ability_button_container.get_children():
 		ac.ability = null
 	
-	if selected_unit:
+	if selected_unit and is_instance_valid(selected_unit):
 		unit_name_label.text = "Name: " + selected_unit.name
+		if not selected_unit is preload("res://src/Unit.gd"):
+			return
 		hp_label.text = "Hp: " + str(selected_unit.hp)
 		attack_damage_label.text = "Attack Damage: " + str(selected_unit.attack_damage)
 		attack_speed_label.text = "Attack Speed: " + str(selected_unit.attack_speed)
 		movement_speed_label.text = "Movement Speed: " + str(selected_unit.movement_speed)
-		action_label.text = "Action: " + str(selected_unit.command.action if selected_unit.command != null else "")
+		action_label.text = "Action: " + str(selected_unit.current_command.ability_id if selected_unit.current_command != null else "")
 		power_label.text = "Power: " + str(selected_unit.power)
 		for ability in selected_unit.abilities:
 			if ability.column >= ability_button_container.columns:

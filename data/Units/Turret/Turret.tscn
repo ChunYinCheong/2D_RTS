@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/Unit.tscn" type="PackedScene" id=4]
+
+[node name="Turret" instance=ExtResource( 4 )]
+
+[node name="UnitAttributes" parent="." index="8"]
+max_hp = 1000.0
+attack_damage = 50.0
+attack_speed = 1.5
+attack_range = 500.0

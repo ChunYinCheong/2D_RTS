@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/TechnologySystem/Technology.gd" type="Script" id=1]
+
+[node name="Technology" type="Node" groups=[
+"Technology",
+]]
+script = ExtResource( 1 )

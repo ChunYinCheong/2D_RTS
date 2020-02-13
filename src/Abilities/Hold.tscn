@@ -6,6 +6,7 @@
 
 [node name="Hold" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
+ability_id = "hold"
 ability_name = "Hold"
 column = 1
 texture = ExtResource( 3 )

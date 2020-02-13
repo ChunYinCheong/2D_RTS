@@ -4,7 +4,8 @@ export(PackedScene) var building :PackedScene
 export var ore = 0
 export var crystal = 0
 
-func start_effect():
+func start(u,c):
+	.start(u,c)
 	var b = building.instance()
 
 	var area = Area2D.new()

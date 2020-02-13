@@ -9,7 +9,7 @@ var power_supply = 0.0 setget ,get_power_supply
 func get_power_supply():
 	var power_supply = 0.0
 	for supply in get_tree().get_nodes_in_group("PowerSupply"):
-		if supply.player_index == player.index:
+		if supply.player_index == player.player_index:
 			power_supply += supply.power
 	return power_supply
 	
@@ -17,7 +17,7 @@ var recharge_speed = 0.0 setget ,get_recharge_speed
 func get_recharge_speed():
 	var recharge_speed = 0.0
 	for storage in get_tree().get_nodes_in_group("PowerStorage"):
-		if storage.player_index == player.index:
+		if storage.player_index == player.player_index:
 			recharge_speed += storage.recharge_speed
 	return recharge_speed
 
@@ -32,7 +32,7 @@ func _process(delta):
 	var power_consumption = 0.0
 	var power = self.power_supply * delta
 	for storage in get_tree().get_nodes_in_group("PowerStorage"):
-		if storage.player_index == player.index:
+		if storage.player_index == player.player_index:
 			var r = min(storage.recharge_speed * delta, (storage.max_power_storage - storage.power_storage))
 			var fill = min(r,power)
 			power_consumption += r / delta

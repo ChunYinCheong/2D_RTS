@@ -1,16 +1,17 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://assets/tilesheet.png" type="Texture" id=1]
-[ext_resource path="res://src/Units/PowerStation/PowerStation.tscn" type="PackedScene" id=2]
-[ext_resource path="res://src/Units/Mine/Mine.tscn" type="PackedScene" id=3]
-[ext_resource path="res://src/Units/Alchemist/Alchemist.tscn" type="PackedScene" id=4]
-[ext_resource path="res://src/Units/Doll/Doll.tscn" type="PackedScene" id=5]
-[ext_resource path="res://src/Units/Enemies/Monsters/SmallBug/SmallBug.tscn" type="PackedScene" id=6]
-[ext_resource path="res://src/Units/Enemies/Monsters/BugNest/BugNest.tscn" type="PackedScene" id=7]
-[ext_resource path="res://src/System/Player.tscn" type="PackedScene" id=8]
-[ext_resource path="res://src/System/EnemyAI.tscn" type="PackedScene" id=9]
-[ext_resource path="res://src/Units/Base/Base.tscn" type="PackedScene" id=10]
+[ext_resource path="res://data/Units/PowerStation/PowerStation.tscn" type="PackedScene" id=2]
+[ext_resource path="res://data/Units/Mine/Mine.tscn" type="PackedScene" id=3]
+[ext_resource path="res://data/Units/Alchemist/Alchemist.tscn" type="PackedScene" id=4]
+[ext_resource path="res://data/Units/Doll/Doll.tscn" type="PackedScene" id=5]
+[ext_resource path="res://data/Units/Bugs/SmallBug/SmallBug.tscn" type="PackedScene" id=6]
+[ext_resource path="res://data/Units/Bugs/BugNest/BugNest.tscn" type="PackedScene" id=7]
+[ext_resource path="res://data/Players/SurvivorPlayer.tscn" type="PackedScene" id=8]
+[ext_resource path="res://data/Players/BugPlayer.tscn" type="PackedScene" id=9]
+[ext_resource path="res://data/Units/Base/Base.tscn" type="PackedScene" id=10]
 [ext_resource path="res://src/World.gd" type="Script" id=11]
+[ext_resource path="res://src/System/PlayerController.tscn" type="PackedScene" id=12]
 
 [sub_resource type="TileSet" id=1]
 0/name = "tilesheet.png 0"
@@ -65,10 +66,12 @@ tile_data = PoolIntArray( -196612, 1, 0, -196611, 1, 0, -196610, 1, 0, -196609, 
 [node name="Building" type="TileMap" parent="."]
 format = 1
 
-[node name="Player" parent="." instance=ExtResource( 8 )]
-index = 1
+[node name="PlayerController" parent="." instance=ExtResource( 12 )]
+player_index = 1
 
-[node name="EnemyAI" parent="." instance=ExtResource( 9 )]
+[node name="SurvivorPlayer" parent="." instance=ExtResource( 8 )]
+
+[node name="BugPlayer" parent="." instance=ExtResource( 9 )]
 
 [node name="PowerStation" parent="." instance=ExtResource( 2 )]
 position = Vector2( 320, 192 )

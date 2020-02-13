@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://data/Technologies/Doll/DollPowerSupplyTechnology.gd" type="Script" id=1]
+[ext_resource path="res://src/TechnologySystem/Technology.tscn" type="PackedScene" id=2]
+
+[node name="DollPowerSupplyTechnology" instance=ExtResource( 2 )]
+script = ExtResource( 1 )

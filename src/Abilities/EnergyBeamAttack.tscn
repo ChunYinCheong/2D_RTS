@@ -5,6 +5,7 @@
 
 [node name="EnergyBeamAttack" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
+ability_id = "attack"
 ability_name = "Energy Beam Attack"
 row = 2
 action = "attack"

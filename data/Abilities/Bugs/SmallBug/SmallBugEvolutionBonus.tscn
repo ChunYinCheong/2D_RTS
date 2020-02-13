@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/Abilities/TechnologyBonus.tscn" type="PackedScene" id=1]
+
+[node name="SmallBugEvolutionBonus" instance=ExtResource( 1 )]
+ability_name = "SmallBugEvolutionBonus"
+passive = true
+technology_id = "bug_evolution"
+attack_speed_per_level = 1.0

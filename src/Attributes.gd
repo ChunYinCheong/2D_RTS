@@ -1,5 +1,7 @@
 extends Node
 
+signal changed
+
 export var max_hp : float = 0
 export var hp_regen : float = 0
 export var max_mp : float = 0

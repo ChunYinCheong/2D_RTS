@@ -2,6 +2,7 @@ extends Node
 
 signal attribute_changed
 
+export var ability_id : String = ""
 export var ability_name : String = ""
 export var ability_description : String = ""
 export var ability_level : int = 0
@@ -20,16 +21,24 @@ export var passive = false
 
 
 var unit
-var command setget set_command
-func set_command(c):
-	command = c
-	if command:
-		start_effect()
+var command 
 		
-onready var attributes = $Attributes
+func start(u, c):
+	unit = u
+	command = c
+	pass
+	
+func stop():
+	pass
 
 func start_effect():
 	pass
 	
 func update_effect(delta):
+	pass
+
+func _on_Unit_add_ability(unit):
+	pass
+
+func _on_Unit_remove_ability(unit):
 	pass

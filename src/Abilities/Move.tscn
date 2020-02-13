@@ -4,8 +4,9 @@
 [ext_resource path="res://src/Abilities/Move.gd" type="Script" id=2]
 [ext_resource path="res://assets/ability/texture/move.png" type="Texture" id=3]
 
-[node name="Move" index="0" instance=ExtResource( 1 )]
+[node name="Move" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
+ability_id = "move"
 ability_name = "Move"
 texture = ExtResource( 3 )
 action = "move"

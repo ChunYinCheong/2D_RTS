@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://src/Abilities/Ability.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/Abilities/AttributeBonus.gd" type="Script" id=2]
+[ext_resource path="res://src/Attributes.tscn" type="PackedScene" id=3]
+
+[node name="AttributeBonus" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+passive = true
+
+[node name="Attributes" parent="." index="0" instance=ExtResource( 3 )]
