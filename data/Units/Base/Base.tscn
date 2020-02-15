@@ -14,7 +14,11 @@ radius = 256.0
 [node name="CollisionShape2D" parent="." index="0"]
 shape = SubResource( 1 )
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="SelectionArea" index="1"]
+[node name="UnitAttributes" parent="." index="8"]
+max_hp = 10000.0
+hp_regen = 10.0
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="SelectionArea" index="0"]
 shape = SubResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="." index="12"]

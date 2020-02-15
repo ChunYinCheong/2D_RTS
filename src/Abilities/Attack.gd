@@ -20,7 +20,7 @@ func update_effect(delta):
 	if target_unit:
 		target_position = target_unit.global_position
 		if unit.attack_cd <= 0:
-			if (target_position - unit.global_position).length() > unit.attack_range:
+			if (target_position - unit.global_position).length() > (unit.attack_range + target_unit.collision_size):
 				unit.move(delta,target_position)
 			else:
 				if not target_unit.dead:
