@@ -67,3 +67,20 @@ func _on_Unit_add_ability(unit):
 func _on_Unit_remove_ability(unit):
 	unit.remove_attribute_modifier(attribute_modifier)
 	pass
+
+func ability_level_changed():
+	if attribute_modifier:
+		attribute_modifier.max_hp = self.max_hp_per_level * self.ability_level
+		attribute_modifier.hp_regen = self.hp_regen_per_level * self.ability_level
+		attribute_modifier.max_mp = self.max_mp_per_level * self.ability_level
+		attribute_modifier.mp_regen = self.mp_regen_per_level * self.ability_level
+		attribute_modifier.attack_damage = self.attack_damage_per_level * self.ability_level
+		attribute_modifier.attack_speed = self.attack_speed_per_level * self.ability_level
+		attribute_modifier.attack_range = self.attack_range_per_level * self.ability_level
+		attribute_modifier.movement_speed = self.movement_speed_per_level * self.ability_level
+		attribute_modifier.emit_signal("changed")
+	pass # Replace with function body.
+
+func set_ability_level(value):
+	.set_ability_level(value)
+	ability_level_changed()

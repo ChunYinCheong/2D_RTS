@@ -149,6 +149,9 @@ func _process(delta):
 func _physics_process(delta):
 	if current_ability:
 		current_ability.update_effect(delta)
+	for a in abilities:
+#		a.update_passive(delta)
+		pass
 	return
 
 

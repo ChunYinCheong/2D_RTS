@@ -40,7 +40,7 @@ func _process(delta):
 		unit_name_label.text = "Name: " + selected_unit.name
 		if not selected_unit is preload("res://src/Unit.gd"):
 			return
-		hp_label.text = "Hp: " + str(selected_unit.hp)
+		hp_label.text = "Hp: " + str(int(selected_unit.hp)) + "/" + str(int(selected_unit.max_hp))
 		attack_damage_label.text = "Attack Damage: " + str(selected_unit.attack_damage)
 		attack_speed_label.text = "Attack Speed: " + str(selected_unit.attack_speed)
 		movement_speed_label.text = "Movement Speed: " + str(selected_unit.movement_speed)

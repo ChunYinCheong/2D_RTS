@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/Abilities/UpgradeAbility.tscn" type="PackedScene" id=1]
+
+[node name="BaseHpBonusUpgrade" instance=ExtResource( 1 )]
+ability_id = "base_hp_bonus_upgrade"
+ability_name = "Hp Bonus Upgrade"
+row = 1
+upgrade_ability_id = "base_hp_bonus"
+ore_cost_fixed = 100
+ore_cost_per_level = 100

@@ -15,15 +15,15 @@ func start(u,c):
 	area.global_position = command.position
 	
 	if not area.get_overlapping_bodies().empty():
-		show_fail_message("Overlapping!", command.position)
+		ability_fail("Overlapping!")
 		area.queue_free()
 		unit.command_end()
 		return
 	
 	for player in get_tree().get_nodes_in_group("Player"):
-		if player.index == unit.player_index:
+		if player.player_index == unit.player_index:
 			if not player.has_enough_resource(ore,crystal):
-				show_fail_message("Resource not enough", command.position)
+				ability_fail("Resource not enough")
 				area.queue_free()
 				unit.command_end()
 				return
@@ -34,14 +34,4 @@ func start(u,c):
 	b.global_position = command.position
 	unit.command_end()
 	pass
-	
-	
-func show_fail_message(m,p):
-	for player in get_tree().get_nodes_in_group("Player"):
-		if player.index == unit.player_index:
-			player.show_message(m)
-	var label = preload("res://src/System/FadeOutLabel.tscn").instance()
-	label.text = m
-	get_tree().current_scene.add_child(label)
-	label.rect_global_position = unit.global_position
 	

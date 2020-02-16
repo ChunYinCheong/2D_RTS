@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/Abilities/AttributeBonus.tscn" type="PackedScene" id=1]
+
+[node name="BaseHpBonus" instance=ExtResource( 1 )]
+ability_id = "base_hp_bonus"
+ability_name = "Hp Bonus"
+max_hp_per_level = 1000.0

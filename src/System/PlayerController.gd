@@ -100,7 +100,7 @@ func _on_AbilityButton_button_down(control):
 			build_illusion.visible = true
 		pass
 	else:
-		selection_system.selected_unit.set_command({"ability_id":a.action})
+		selection_system.selected_unit.set_command({"ability_id":a.ability_id})
 #	print(control.ability)
 
 func stop_choosing_target():

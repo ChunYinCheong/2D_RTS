@@ -1,32 +1,25 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/unit/mine/mine.png" type="Texture" id=5]
 [ext_resource path="res://src/Unit.tscn" type="PackedScene" id=6]
 
-[sub_resource type="GDScript" id=1]
-script/source = "extends \"res://src/Unit.gd\"
-
-"
-
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 63, 63 )
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 64, 64 )
 
 [node name="Mine" instance=ExtResource( 6 )]
-script = SubResource( 1 )
-illusion_texture = ExtResource( 5 )
 
 [node name="CollisionShape2D" parent="." index="0"]
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="Tween" type="Tween" parent="." index="10"]
 repeat = true
 playback/repeat = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="SelectionArea" index="0"]
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 
 [node name="PowerStorage" parent="." index="12"]
 max_power_storage = 10.0
