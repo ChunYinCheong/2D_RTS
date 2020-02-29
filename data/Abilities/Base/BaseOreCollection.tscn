@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/Abilities/ResourceCollection.tscn" type="PackedScene" id=1]
+
+[node name="BaseOreCollection" instance=ExtResource( 1 )]
+ability_id = "base_ore_collection"
+ability_name = "Ore Collection"
+column = 2
+ore_basic = 10
+ore_per_level = 1

@@ -39,10 +39,15 @@ func start_effect():
 func update_effect(delta):
 	pass
 
+func update_passive_effect(delta):
+	pass
+
 func _on_Unit_add_ability(unit):
+	self.unit = unit
 	pass
 
 func _on_Unit_remove_ability(unit):
+	self.unit = null
 	pass
 
 

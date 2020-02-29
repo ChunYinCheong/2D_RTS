@@ -150,7 +150,7 @@ func _physics_process(delta):
 	if current_ability:
 		current_ability.update_effect(delta)
 	for a in abilities:
-#		a.update_passive(delta)
+		a.update_passive_effect(delta)
 		pass
 	return
 
