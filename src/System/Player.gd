@@ -3,7 +3,6 @@ extends Node
 
 signal technology_level_changed(technology)
 
-onready var resource = $ResourceSystem
 onready var technology_tree = $TechnologyTree
 var technologies setget ,get_technologies
 func get_technologies():

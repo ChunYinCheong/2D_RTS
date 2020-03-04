@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://src/Unit.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Abilities/Move.tscn" type="PackedScene" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://data/Units/Alchemist/animation_frame.tres" type="SpriteFrames" id=4]
 [ext_resource path="res://src/Abilities/Stop.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/Abilities/Hold.tscn" type="PackedScene" id=6]
+[ext_resource path="res://data/Abilities/Build/BuildWall.tscn" type="PackedScene" id=7]
+[ext_resource path="res://data/Abilities/Build/BuildTurret.tscn" type="PackedScene" id=8]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 32.0
@@ -15,7 +17,6 @@ radius = 32.0
 [node name="AnimatedSprite" parent="." index="2"]
 frames = ExtResource( 4 )
 animation = "run"
-frame = 1
 playing = true
 
 [node name="Move" parent="UnitAbilities" index="0" instance=ExtResource( 2 )]
@@ -25,6 +26,10 @@ playing = true
 [node name="Stop" parent="UnitAbilities" index="2" instance=ExtResource( 5 )]
 
 [node name="Hold" parent="UnitAbilities" index="3" instance=ExtResource( 6 )]
+
+[node name="BuildWall" parent="UnitAbilities" index="4" instance=ExtResource( 7 )]
+
+[node name="BuildTurret" parent="UnitAbilities" index="5" instance=ExtResource( 8 )]
 
 [node name="UnitAttributes" parent="." index="8"]
 max_hp = 1000.0

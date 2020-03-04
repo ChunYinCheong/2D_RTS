@@ -13,7 +13,12 @@ var pointing_unit setget ,get_pointing_unit
 func get_pointing_unit():
 	if selection_area_list.empty():
 		return null
-	return selection_area_list.back().get_parent()
+	var n = selection_area_list.back()
+	if is_instance_valid(n):
+		return n.get_parent()
+	else:
+		pass
+	return 
 
 func _on_SelectionArea_mouse_entered(area):
 	selection_area_list.append(area)

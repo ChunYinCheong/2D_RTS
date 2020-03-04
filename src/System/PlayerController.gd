@@ -60,14 +60,14 @@ func _unhandled_input(event):
 			if build_illusion.visible:
 				if not build_illusion.is_overlapping:
 					selection_system.selected_unit.set_command({
-						"ability_id": preparing_ability.action,
+						"ability_id": preparing_ability.ability_id,
 						"position": build_illusion.global_position,
 						"unit": selection_system.pointing_unit,
 						})
 					stop_choosing_target()
 			else:
 				selection_system.selected_unit.set_command({
-					"ability_id": preparing_ability.action,
+					"ability_id": preparing_ability.ability_id,
 					"position": get_global_mouse_position(),
 					"unit": selection_system.pointing_unit,
 					})
@@ -94,7 +94,7 @@ func _on_AbilityButton_button_down(control):
 	if a.need_target:
 		preparing_ability = a
 		Input.set_custom_mouse_cursor(attack,0,Vector2(32,32))
-		if a is preload("res://src/Abilities/Build/Build.gd"):
+		if a is preload("res://src/Abilities/Build.gd"):
 			build_illusion.global_position = get_global_mouse_position()
 			build_illusion.build_unit = a.building.instance()
 			build_illusion.visible = true

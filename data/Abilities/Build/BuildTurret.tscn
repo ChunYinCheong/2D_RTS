@@ -1,19 +1,16 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://src/Abilities/Build.gd" type="Script" id=1]
-[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://assets/unit/turret/turret.png" type="Texture" id=2]
 [ext_resource path="res://data/Units/Turret/Turret.tscn" type="PackedScene" id=3]
-
-
-
 
 [node name="BuildTurret" type="Node"]
 script = ExtResource( 1 )
+ability_id = "build_turret"
 ability_name = "Build Turret"
 row = 2
 column = 3
 texture = ExtResource( 2 )
-action = "build_turret"
 need_target = true
 building = ExtResource( 3 )
-ore = 5
+ore = 50

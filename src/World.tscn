@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://assets/tilesheet.png" type="Texture" id=1]
 [ext_resource path="res://data/Units/PowerStation/PowerStation.tscn" type="PackedScene" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://data/Level/BugEvolutionTimer.gd" type="Script" id=13]
 [ext_resource path="res://data/Level/BugSpawnTimer.gd" type="Script" id=14]
 [ext_resource path="res://src/GameTime.gd" type="Script" id=15]
+[ext_resource path="res://data/Units/Wall/Wall.tscn" type="PackedScene" id=16]
 
 [sub_resource type="TileSet" id=1]
 0/name = "tilesheet.png 0"
@@ -115,6 +116,10 @@ script = ExtResource( 14 )
 
 [node name="GameTime" type="Node" parent="."]
 script = ExtResource( 15 )
+
+[node name="Wall" parent="." instance=ExtResource( 16 )]
+position = Vector2( 576.457, -192 )
+player_index = 1
 [connection signal="die" from="Alchemist" to="." method="_on_Alchemist_die"]
 [connection signal="die" from="Base" to="." method="_on_Base_die"]
 [connection signal="timeout" from="BugEvolutionTimer" to="BugEvolutionTimer" method="_on_BugEvolutionTimer_timeout"]
