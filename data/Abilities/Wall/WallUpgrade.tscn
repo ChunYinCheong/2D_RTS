@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/Abilities/UpgradeAbility.tscn" type="PackedScene" id=1]
+
+[node name="WallUpgrade" instance=ExtResource( 1 )]
+ability_id = "wall_upgrade"
+ability_name = "Wall Upgrade"
+row = 2
+upgrade_ability_id = "wall_upgrade_bonus"
+ore_cost_fixed = 50
+ore_cost_per_level = 5
